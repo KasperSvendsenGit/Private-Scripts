@@ -68,19 +68,7 @@ $StreamWriterPW =  [System.IO.StreamWriter]::new($OutfilePW)
 
 while (-not $StreamReader.EndOfStream) {
 	foreach ($line in $StreamReader.Readline()) {
-		<#
-		hashes:
-		0
-		16 - review hashed output
-		32 - done
-		34
-		40 - done
-		41 - done
-		49
-		60 - done
-		64 - done
-		128
-		#>
+
 		if (($line.Length -eq 49) -or ($line.Length -eq 128) -or ($line.Length -eq 0) -or ($line.Length -eq 34)) {
 			$StreamWriterhashes.WriteLine([system.string]$line)
 		}
